@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppAjaxDL", "WebAppAjaxDL\WebAppAjaxDL.csproj", "{4215E233-529B-44D1-8F29-09A9BBFD0124}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4215E233-529B-44D1-8F29-09A9BBFD0124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4215E233-529B-44D1-8F29-09A9BBFD0124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4215E233-529B-44D1-8F29-09A9BBFD0124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4215E233-529B-44D1-8F29-09A9BBFD0124}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B2576B1-E387-40EC-A968-B31011BDCC0E}
+	EndGlobalSection
+EndGlobal

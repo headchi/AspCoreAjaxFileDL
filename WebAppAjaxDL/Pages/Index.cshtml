@@ -1,0 +1,66 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <button type="submit">POST</button>
+    <button type="submit" asp-page-handler="DownLoad">DL</button>
+</form>
+
+
+<a id='Index_@ViewData["ichi"]' class="btn btn-info card-link text-light" onclick="ajaxCorrectedCount('@ViewData["ichi"]');">
+    ajax
+</a>
+<a id='aaaa' class="btn btn-info card-link text-light" onclick="ajaxFd('@ViewData["ni"]');">
+    fd
+</a>
+
+@section scripts{
+    <script>
+        function ajaxCorrectedCount(AjaxMemorizeID) {
+            $.ajax({
+                type: 'get',
+                url: '?handler=UpdateCorrectedCount&memorizeID=' + 123 + '',
+                datatype: "application/json",
+                data: {
+                    __RequestVerificationToken: $('[name="__RequestVerificationToken"]').val(),
+                },
+                success: function (data) {
+                    alert(data.content);
+                }
+            });
+        }
+
+        function ajaxFd(AjaxMemorizeID) {
+            $.ajax({
+                type: 'get',
+                url: '?handler=FileDownload&memorizeID=' + 123 + '',
+                datatype: "application/json",
+                data: {
+                    __RequestVerificationToken: $('[name="__RequestVerificationToken"]').val(),
+                },
+                xhrFields: { responseType: 'blob' },
+                success: function (data) {
+                    //let downloadData = new Blob([data], { type: 'text/plain' });
+                    //window.navigator.msSaveBlob(downloadData);
+
+                    window.navigator.msSaveBlob(data, "@ViewData["FileName"]");
+
+                }
+            });
+        }
+
+    </script>
+}
